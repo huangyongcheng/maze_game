@@ -4,8 +4,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../core/constants/app_colors.dart';
-import '../../core/constants/app_strings.dart';
 import '../../domain/entities/difficulty.dart';
+import '../../l10n/app_localizations.dart';
 import '../providers/game_provider.dart';
 import '../providers/score_provider.dart';
 import '../widgets/game_hud.dart';
@@ -17,10 +17,11 @@ class HomeScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final l10n = AppLocalizations.of(context);
     return Scaffold(
       backgroundColor: AppColors.background,
       appBar: AppBar(
-        title: const Text(AppStrings.appTitle),
+        title: Text(l10n.appTitle),
         actions: [
           IconButton(
             icon: const Icon(Icons.settings_rounded),
@@ -37,7 +38,7 @@ class HomeScreen extends ConsumerWidget {
             children: [
               const SizedBox(height: 8),
               Text(
-                AppStrings.tagline,
+                l10n.tagline,
                 textAlign: TextAlign.center,
                 style: GoogleFonts.fredoka(
                   fontSize: 18,
@@ -52,7 +53,7 @@ class HomeScreen extends ConsumerWidget {
                       context: context,
                       ref: ref,
                       difficulty: Difficulty.easy,
-                      label: AppStrings.easy,
+                      label: l10n.easy,
                       stars: 1,
                       color: AppColors.homeColor,
                     ),
@@ -61,7 +62,7 @@ class HomeScreen extends ConsumerWidget {
                       context: context,
                       ref: ref,
                       difficulty: Difficulty.medium,
-                      label: AppStrings.medium,
+                      label: l10n.medium,
                       stars: 2,
                       color: AppColors.accentPurple,
                     ),
@@ -70,7 +71,7 @@ class HomeScreen extends ConsumerWidget {
                       context: context,
                       ref: ref,
                       difficulty: Difficulty.hard,
-                      label: AppStrings.hard,
+                      label: l10n.hard,
                       stars: 3,
                       color: AppColors.cisboxColor,
                     ),
@@ -92,6 +93,7 @@ class HomeScreen extends ConsumerWidget {
     required int stars,
     required Color color,
   }) {
+    final l10n = AppLocalizations.of(context);
     final bestTime = ref.watch(bestTimeProvider(difficulty));
     return InkWell(
       borderRadius: BorderRadius.circular(24),
@@ -137,7 +139,7 @@ class HomeScreen extends ConsumerWidget {
                   const SizedBox(height: 2),
                   bestTime.when(
                     data: (d) => Text(
-                      '${AppStrings.bestTime}: ${d == null ? AppStrings.noRecord : formatDuration(d)}',
+                      '${l10n.bestTime}: ${d == null ? l10n.noRecord : formatDuration(d)}',
                       style: GoogleFonts.fredoka(
                           fontSize: 14, color: AppColors.textPrimary.withValues(alpha: 0.8)),
                     ),

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
 import '../../core/constants/app_colors.dart';
-import '../../core/constants/app_strings.dart';
+import '../../l10n/app_localizations.dart';
 
 /// Briefly slides in a "+30s" indicator at the top of the screen.
 class RevealPenaltyToast extends StatelessWidget {
@@ -10,6 +10,7 @@ class RevealPenaltyToast extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
       decoration: BoxDecoration(
@@ -20,9 +21,9 @@ class RevealPenaltyToast extends StatelessWidget {
               color: AppColors.buttonShadow, blurRadius: 6, offset: Offset(0, 3))
         ],
       ),
-      child: const Text(
-        AppStrings.revealMapPenalty,
-        style: TextStyle(
+      child: Text(
+        l10n.revealMapPenalty,
+        style: const TextStyle(
             color: AppColors.textPrimary,
             fontWeight: FontWeight.w600,
             fontSize: 16),

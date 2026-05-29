@@ -1,10 +1,12 @@
-# Hành Trình Về Cisbox · Home to Cisbox
+# Home to Cisbox
 
-> Một trò chơi mê cung dễ thương: dẫn nhân vật từ nhà về tới văn phòng Cisbox.
 > A cute Flutter maze game — navigate a chibi character from home to the Cisbox office.
+> The in-app UI is localized in Vietnamese (all user-facing strings live in `app_strings.dart`).
 
 Built with **Flutter 3.x**, **Riverpod**, **Hive**, and **Clean Architecture**.
 Runs on Android, iOS, Web, Windows, macOS, and Linux.
+
+> 📖 New to the game? Read the [player guide](docs/how_to_play.md).
 
 ---
 
@@ -32,7 +34,22 @@ docs/
 - D-pad and swipe controls (toggle individually in settings)
 - Confetti celebration on win
 - Hand-drawn `CustomPainter` art — no image assets required
-- Tieng Viet UI
+- Vietnamese UI strings centralized in `app_strings.dart`
+
+---
+
+## How to play
+
+1. **Pick a difficulty** from the home screen (Easy 10×10 / Medium 15×15 / Hard 20×20). Larger grid = smaller visibility radius.
+2. **Move** with the D-pad arrows or by swiping the maze. Toggle either control scheme in Settings.
+3. **Find the office.** Most of the maze is hidden by fog — only a small radius around the player is visible. Walls block movement; bumping a wall does not cost time.
+4. **Reveal the map** with the 👁 button if you're stuck — but every time you turn it ON it adds **+30 seconds** to your total time. No limit on toggles.
+5. **Reach the Cisbox office** (bottom-right). The timer stops, a confetti win screen shows your total time, and Hive persists the new best time per difficulty if you beat your previous record.
+6. **Pause** any time with the ⏸ button — the timer stops and controls disable until you resume.
+
+**Pro tips:** Try a no-reveal run on Hard. Use the right-hand rule (always turn right at junctions) — it's guaranteed to find the exit in a perfect maze. The generator is recursive backtracking, so corridors tend to be long and winding.
+
+→ Full Vietnamese player guide with FAQ and detailed tips: [`docs/how_to_play.md`](docs/how_to_play.md).
 
 ---
 
@@ -176,16 +193,6 @@ Covers:
 | `test/domain/move_player_usecase_test.dart` | Wall collisions, grid boundaries, facing updates |
 | `test/data/score_repository_test.dart` | Best-time persistence and per-difficulty isolation |
 | `test/presentation/d_pad_test.dart` | D-pad tap -> correct direction; disabled state ignores taps |
-
----
-
-## Game rules
-
-- Reach the Cisbox office from your house.
-- The fog of war hides parts of the maze; the **eye** button reveals the
-  whole maze but adds **+30 seconds** to your time every time you turn it on.
-- Pause stops the clock and disables controls.
-- Best time per difficulty is stored locally with Hive and survives restarts.
 
 ---
 

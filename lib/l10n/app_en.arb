@@ -1,0 +1,76 @@
+{
+  "@@locale": "en",
+
+  "appTitle": "Home to Cisbox",
+  "@appTitle": {
+    "description": "App title shown on home screen and in the OS task switcher"
+  },
+
+  "tagline": "Find your way home to the office",
+  "@tagline": {
+    "description": "Subtitle on the home screen below the app title"
+  },
+
+  "easy": "Easy",
+  "@easy": { "description": "Easy difficulty label" },
+
+  "medium": "Medium",
+  "@medium": { "description": "Medium difficulty label" },
+
+  "hard": "Hard",
+  "@hard": { "description": "Hard difficulty label" },
+
+  "play": "Play",
+  "@play": { "description": "Generic play button" },
+
+  "pause": "Pause",
+  "@pause": { "description": "Pause button / overlay title" },
+
+  "resume": "Resume",
+  "@resume": { "description": "Resume button on pause overlay" },
+
+  "quit": "Quit",
+  "@quit": { "description": "Quit button on pause overlay" },
+
+  "playAgain": "Play Again",
+  "@playAgain": { "description": "Win screen — start a new run" },
+
+  "backToMenu": "Back to Menu",
+  "@backToMenu": { "description": "Win screen — return to home" },
+
+  "youWon": "🎉 You made it to Cisbox!",
+  "@youWon": { "description": "Win screen — main victory message" },
+
+  "newRecord": "🏆 New Record!",
+  "@newRecord": { "description": "Win screen — shown when player beat their best time" },
+
+  "bestTime": "Best",
+  "@bestTime": { "description": "Label preceding the best time, e.g. 'Best: 01:23'" },
+
+  "noRecord": "None yet",
+  "@noRecord": { "description": "Shown in place of best time when player has never finished this difficulty" },
+
+  "yourTime": "Your Time",
+  "@yourTime": { "description": "Win screen label above the run's time" },
+
+  "revealMapPenalty": "⏰ +30 seconds",
+  "@revealMapPenalty": { "description": "Toast shown when player turns map reveal on" },
+
+  "settings": "Settings",
+  "@settings": { "description": "Settings screen title" },
+
+  "sound": "Sound",
+  "@sound": { "description": "Sound master toggle label" },
+
+  "controlScheme": "Controls",
+  "@controlScheme": { "description": "Section header for control-scheme picker" },
+
+  "dpadAndSwipe": "D-pad + Swipe",
+  "@dpadAndSwipe": { "description": "Control scheme: both enabled" },
+
+  "dpadOnly": "D-pad only",
+  "@dpadOnly": { "description": "Control scheme: only the on-screen arrow pad" },
+
+  "swipeOnly": "Swipe only",
+  "@swipeOnly": { "description": "Control scheme: only swipe gestures" }
+}
