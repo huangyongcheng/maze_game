@@ -8,7 +8,9 @@
       "Bash(flutter pub *)",
       "Bash(flutter analyze *)",
       "Bash(flutter test *)",
-      "Bash(flutter build *)"
+      "Bash(flutter build *)",
+      "Bash(mkdir \"D:\\\\Project\\\\maze-game\\\\docs\" 2>&1; cp \"C:\\\\Users\\\\Administrator\\\\Downloads\\\\huong_dan_choi_game.md\" \"D:\\\\Project\\\\maze-game\\\\docs\\\\huong_dan_choi_game.md\" && ls \"D:\\\\Project\\\\maze-game\\\\docs\")",
+      "Bash(flutter gen-l10n *)"
     ]
   }
 }

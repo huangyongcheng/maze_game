@@ -6,8 +6,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../core/constants/app_colors.dart';
-import '../../core/constants/app_strings.dart';
 import '../../domain/entities/difficulty.dart';
+import '../../l10n/app_localizations.dart';
 import '../providers/game_provider.dart';
 import '../providers/score_provider.dart';
 import '../widgets/game_hud.dart';
@@ -27,6 +27,7 @@ class WinScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final l10n = AppLocalizations.of(context);
     final bestAsync = ref.watch(bestTimeProvider(difficulty));
     return Scaffold(
       backgroundColor: AppColors.background,
@@ -41,13 +42,13 @@ class WinScreen extends ConsumerWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      AppStrings.youWon,
+                      l10n.youWon,
                       style: GoogleFonts.fredoka(
                           fontSize: 28, fontWeight: FontWeight.w600),
                       textAlign: TextAlign.center,
                     ).animate().scale(curve: Curves.elasticOut, duration: 600.ms),
                     const SizedBox(height: 32),
-                    Text(AppStrings.yourTime,
+                    Text(l10n.yourTime,
                         style: GoogleFonts.fredoka(
                             fontSize: 18, color: AppColors.textSecondary)),
                     const SizedBox(height: 4),
@@ -69,7 +70,7 @@ class WinScreen extends ConsumerWidget {
                           borderRadius: BorderRadius.circular(20),
                         ),
                         child: Text(
-                          AppStrings.newRecord,
+                          l10n.newRecord,
                           style: GoogleFonts.fredoka(
                               fontSize: 18, fontWeight: FontWeight.w600),
                         ),
@@ -80,7 +81,7 @@ class WinScreen extends ConsumerWidget {
                     else
                       bestAsync.when(
                         data: (best) => Text(
-                          '${AppStrings.bestTime}: ${best == null ? AppStrings.noRecord : formatDuration(best)}',
+                          '${l10n.bestTime}: ${best == null ? l10n.noRecord : formatDuration(best)}',
                           style: GoogleFonts.fredoka(
                               fontSize: 16,
                               color: AppColors.textSecondary),
@@ -91,7 +92,7 @@ class WinScreen extends ConsumerWidget {
                     const SizedBox(height: 40),
                     ElevatedButton.icon(
                       icon: const Icon(Icons.refresh_rounded),
-                      label: const Text(AppStrings.playAgain),
+                      label: Text(l10n.playAgain),
                       onPressed: () {
                         ref
                             .read(gameProvider.notifier)
@@ -109,7 +110,7 @@ class WinScreen extends ConsumerWidget {
                         Navigator.of(context)
                             .popUntil((route) => route.isFirst);
                       },
-                      child: const Text(AppStrings.backToMenu),
+                      child: Text(l10n.backToMenu),
                     ),
                   ],
                 ),

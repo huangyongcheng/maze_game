@@ -1,0 +1,27 @@
+{
+  "@@locale": "vi",
+
+  "appTitle": "Hành Trình Về Cisbox",
+  "tagline": "Tìm đường từ nhà đến công ty",
+  "easy": "Dễ",
+  "medium": "Trung Bình",
+  "hard": "Khó",
+  "play": "Chơi",
+  "pause": "Tạm Dừng",
+  "resume": "Tiếp Tục",
+  "quit": "Thoát",
+  "playAgain": "Chơi Lại",
+  "backToMenu": "Về Menu",
+  "youWon": "🎉 Bạn đã đến Cisbox!",
+  "newRecord": "🏆 Kỷ lục mới!",
+  "bestTime": "Kỷ lục",
+  "noRecord": "Chưa có",
+  "yourTime": "Thời gian",
+  "revealMapPenalty": "⏰ +30 giây",
+  "settings": "Cài Đặt",
+  "sound": "Âm Thanh",
+  "controlScheme": "Điều Khiển",
+  "dpadAndSwipe": "D-pad + Vuốt",
+  "dpadOnly": "Chỉ D-pad",
+  "swipeOnly": "Chỉ Vuốt"
+}
